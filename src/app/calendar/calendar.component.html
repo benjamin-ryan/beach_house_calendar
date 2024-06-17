@@ -1,0 +1,32 @@
+<div class="calendar-container">
+    <div class="calendar-month-controls">
+        <div class="calendar-month-control" (click)="goToPreviousMonth()">
+            Previous Month
+        </div>
+        <div class="calendar-month-control" (click)="goToNextMonth()">
+            Next Month
+        </div>
+    </div>
+    <div class="calendar">
+        <div class="calendar-header">
+            <div class="calendar-header-month">
+                June
+            </div>
+        </div>
+        <div class="calendar-weeks-grid">
+            @for (weekDay of weekDays(); track $index) {
+                <div class="calendar-weeks-grid-cell">{{ weekDay }}</div>
+            }
+        </div>
+        <div class="calendar-grid">
+            @for (dayOfMonth of daysOfMonth(); track $index) {
+                <div class="calendar-grid-cell"
+                    [ngClass]="{'available': isAvailable(dayOfMonth), 'reserved': !isAvailable(dayOfMonth)}"
+                    (click)="toggleStatus(dayOfMonth)">
+                    <div class="cell-date">{{ dayOfMonth }}</div>
+                    <div class="cell-status">{{ reservedStatus(dayOfMonth) }}</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
