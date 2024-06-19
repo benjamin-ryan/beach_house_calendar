@@ -11,7 +11,8 @@
   
 .calendar-header-month {
     font-weight: 600;
-    font-size: xx-large;
+    font-size: 250%;
+    font-weight: bold;
 }
   
 .calendar-month-controls {
