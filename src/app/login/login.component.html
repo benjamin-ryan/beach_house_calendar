@@ -1,0 +1,7 @@
+<div class="login-container">
+    <h2>Please enter the password to access the calendar</h2>
+    <form (ngSubmit)="login()" class="login-form">
+        <input type="password" [(ngModel)]="password" name="password" required class="login-input">
+        <button type="submit" class="login-button">Login</button>
+    </form>
+</div>
